@@ -31,30 +31,41 @@ XXX1234-003 2017 - 1 OS - 김아무개
 TABLE LECTURE
 
 lecture_id = 학수 번호 + 분반 번호 .. ex)GEB1111-001
+
 lecture_title = 강의 이름 .. ex) 오퍼레이팅 시스템
-grade = 학년 .. ex) 1학년
-credit = 학점 .. ex) 3.0 학점
-class_type = 과목구분 ex) 전공선택 / 전공필수 / 교양필수..
-eval_method = 평가방법 ex) 절대평가 / 상대평가
-place = 장소.. sugang.inha.ac.kr 기준 시간 및 강의실 그대로 긁어 온 것 ...ex) 수20,21,22(60주년-207)
-instructor = 담당 교수  ex) 송민석..
-remarks = 비고  ex) 미래융합대학.. ?? 없어도 될 것 같기도?
-lecture_time = D1T1T2T3 ... 형태로 요일+교시로 강의 시간이 저장되어 있음
+
+   grade = 학년 .. ex) 1학년
+
+   credit = 학점 .. ex) 3.0 학점
+
+   class_type = 과목구분 ex) 전공선택 / 전공필수 / 교양필수..
+
+   eval_method = 평가방법 ex) 절대평가 / 상대평가
+
+   place = 장소.. sugang.inha.ac.kr 기준 시간 및 강의실 그대로 긁어 온 것 ...ex) 수20,21,22(60주년-207)
+
+   instructor = 담당 교수  ex) 송민석..
+
+   remarks = 비고  ex) 미래융합대학.. ?? 없어도 될 것 같기도?
+
+   lecture_time = D1T1T2T3 ... 형태로 요일+교시로 강의 시간이 저장되어 있음
+
+
 
 TABLE EVALUATION
 
-lecture_code = 과목 코드 ex)GEB1111
-lecture_title = 강의 이름
-instructor = 담당 교수
-eval_method = 평가 방법
-class_type = 과목구분
-grade = 학년
-credit = 학점
-major = 전공 (고유 코드값으로 저장됨)
-predict_rating 
-rating
-MAE
-distinct_id = (lecture_code + instructor)
+   lecture_code = 과목 코드 ex)GEB1111
+   lecture_title = 강의 이름
+   instructor = 담당 교수
+   eval_method = 평가 방법
+   class_type = 과목구분
+   grade = 학년
+   credit = 학점
+   major = 전공 (고유 코드값으로 저장됨)
+   predict_rating 
+   rating
+   MAE
+   distinct_id = (lecture_code + instructor)
 
 
 
