@@ -28,8 +28,7 @@ XXX1234-003 2017 - 1 OS - 김아무개
 이런 식으로 unique하게 만들었습니다.
 
 
-###TABLE LECTURE
-
+### TABLE LECTURE
 
 lecture_id = 학수 번호 + 분반 번호 .. ex)GEB1111-001
 
