@@ -28,7 +28,8 @@ XXX1234-003 2017 - 1 OS - 김아무개
 이런 식으로 unique하게 만들었습니다.
 
 
-TABLE LECTURE
+###TABLE LECTURE
+
 
 lecture_id = 학수 번호 + 분반 번호 .. ex)GEB1111-001
 
@@ -52,27 +53,39 @@ lecture_title = 강의 이름 .. ex) 오퍼레이팅 시스템
 
 
 
-TABLE EVALUATION
+### TABLE EVALUATION
 
    lecture_code = 과목 코드 ex)GEB1111
+   
    lecture_title = 강의 이름
+   
    instructor = 담당 교수
+   
    eval_method = 평가 방법
+   
    class_type = 과목구분
+   
    grade = 학년
+   
    credit = 학점
+   
    major = 전공 (고유 코드값으로 저장됨)
+   
    predict_rating 
+   
    rating
+   
    MAE
+   
    distinct_id = (lecture_code + instructor)
-
-
+   
+---------------------
 
 + 테이블 논의 필요
 1. timestamp - sequelize 에서 선언한 변수형과 python3에서 테이블에 삽입하는 변수형이 달라 보류해두었습니다.
 2. 년도와 학기에 대한 선언이 없는데, 학기에 대한 필요성은 없는 것 같아, 1번 문제가 해결되면 즉시 바로 삽입해버리면 될 것 같습니다.
 
+  -------------------
 아래는 mysql table create문 입니다.
 
    CREATE TABLE evaluation ( 
