@@ -1,20 +1,18 @@
 # repo_node
 
-sequelize
+## sequelize
+* routes에 login/sign-in 삽입하여 jwt를 이용한 인증 진행 미비..
+
 lecture, evaluation - db table 제작
 CRUD 기능 예제 적용해 놓음
 
-*routes에 login/sign-in 삽입하여 jwt를 이용한 인증 진행 미비..
+## crowling ( crowling_python3 / crowling.py )
+* timestamp pytho3 에서 찍을 때 sequelize에서 설정한 데이터 모델과 자료형 설정 문제..
 
-crowling
-*timestamp pytho3 에서 찍을 때 sequelize에서 설정한 데이터 모델과 자료형 설정 문제..
-
-lecture 크롤링할 때
-
+크롤링에서
 lecture_id = GEB1111-001 ( 학수번호 + 분반 번호 )
 lecture_code = GEB1111 (학수번호)
 instructor = 홍길동
-
 
 distinct_id = GEB1111홍길동 (lecture_code + instructor)
 
@@ -24,8 +22,7 @@ XXX1234-001 2017 - 1 OS - 송민석
 XXX1234-002 2017 - 1 OS - 송민석
 XXX1234-003 2017 - 1 OS - 김아무개
 
-=> 
-   XXX1234 OS - 송민석
+=> XXX1234 OS - 송민석
    XXX1234 OS - 김아무개
 
 이런 식으로 unique하게 만들었습니다.
@@ -64,3 +61,40 @@ distinct_id = (lecture_code + instructor)
 + 테이블 논의 필요
 1. timestamp - sequelize 에서 선언한 변수형과 python3에서 테이블에 삽입하는 변수형이 달라 보류해두었습니다.
 2. 년도와 학기에 대한 선언이 없는데, 학기에 대한 필요성은 없는 것 같아, 1번 문제가 해결되면 즉시 바로 삽입해버리면 될 것 같습니다.
+
+
+   CREATE TABLE evaluation ( 
+           id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+           lecture_code varchar(255) NOT NULL,
+           lecture_title varchar(255) NOT NULL,
+           instructor varchar(50) NOT NULL,
+           eval_method varchar(50) NOT NULL,
+           class_type varchar(50) NOT NULL,
+           grade varchar(50) NOT NULL,
+           credit varchar(10),
+           major varchar(255) NOT NULL, 
+           predict_rating double(255,0) NULL,
+           rating  double(255,0) NULL,
+           MAE  double(255,0) NULL,
+           distinct_id varchar(50) NOT NULL,
+           UNIQUE(distinct_id),
+           PRIMARY KEY (`id`) 
+           );
+
+   lecture_id, lecture_title, grade, credit, class_type, place, instructor, eval_method, remarks, lecture_time)
+   —————
+
+   CREATE TABLE lecture ( 
+           id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+           lecture_id varchar(255) NOT NULL,
+           lecture_title varchar(255) NOT NULL,
+           grade varchar(50) NOT NULL,
+           credit int(1) unsigned NOT NULL,
+           class_type varchar(255), 
+           place varchar(255), 
+           instructor varchar(255) NOT NULL, 
+           eval_method varchar(255) NOT NULL, 
+           remarks varchar(255) NOT NULL, 
+           lecture_time varchar(255) NOT NULL, 
+           PRIMARY KEY (id)
+           );
