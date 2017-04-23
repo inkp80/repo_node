@@ -62,6 +62,7 @@ distinct_id = (lecture_code + instructor)
 1. timestamp - sequelize 에서 선언한 변수형과 python3에서 테이블에 삽입하는 변수형이 달라 보류해두었습니다.
 2. 년도와 학기에 대한 선언이 없는데, 학기에 대한 필요성은 없는 것 같아, 1번 문제가 해결되면 즉시 바로 삽입해버리면 될 것 같습니다.
 
+아래는 mysql table create문 입니다.
 
    CREATE TABLE evaluation ( 
            id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -81,8 +82,8 @@ distinct_id = (lecture_code + instructor)
            PRIMARY KEY (`id`) 
            );
 
-   lecture_id, lecture_title, grade, credit, class_type, place, instructor, eval_method, remarks, lecture_time)
-   —————
+
+   ----------------------------------------—————
 
    CREATE TABLE lecture ( 
            id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
